@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body onload="typeWriter()">
+        <h1 id="title"></h1>
+        <div id="info-box-container">
+            <div id="info-box">
+                <h3>Lorem ipsum dolor sit amet</h3> 
+                <h3>consectetur adipiscing elit</h3> 
+                <h3>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3> 
+                <h3>Ut enim ad minim veniam</h3>
+                <h3>quis nostrud exercitation ullamco laboris</h3> 
+                <h3>nisi ut aliquip ex ea <a href="https://www.youtube.com/watch?v=bq4SGw_L-c4">commodo</a> consequat.</h3>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 5px;">
+            Peter Ball (C) 2019
+        </div>
+    
+        <script>
+                var i = 0;
+                var txt = 'Welcome';
+                var speed =200;
+                //var curve = 2;
+                function typeWriter() {
+                    if (i < txt.length) {
+                        document.getElementById("title").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    }
+                }
+        </script>
+    </body>
+</html>
