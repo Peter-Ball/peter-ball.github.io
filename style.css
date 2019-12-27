@@ -1,36 +1,55 @@
 body{
     font-family: 'Inconsolata', monospace;
-    background-color: #0C0032;
+    background-color: #EEE2DC;
     color: whitesmoke;
 }
 h1{
-    color: whitesmoke;
+    color: rgb(236, 214, 203);
     font-size: 70px;
-    font-size: 5vw;
+    margin: auto;
     margin-block-end: 0.67em;
     margin-block-start: 0.67em;
     text-align: center;
+    width: fit-content;
 }
 
 a:link{
-    color: white;
+    color: #AC3B61;
     text-decoration: underline;
 }
 a:visited{
-    color: gray;
+    color: #AC3B61;
     text-decoration: none;
 }
+
+h2{
+    color: #AC3B61;
+    font-size: 30px;
+}
+
 h3{
-    color: whitesmoke;
-    font-size: 16px;
-    font-size: 1.5vw;
+    color: #123C69;
+    font-size: 20px;
+}
+img{
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
 }
 
 #info-box-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-flow: row wrap;
+}
+
+#bottom{
+    animation: fadein_one 6s;
+    position: fixed; 
+    bottom: 5px; 
+    left: 50%; 
+    margin-left: -100px;
 }
 
 #info-box{
@@ -39,6 +58,19 @@ h3{
     padding-left: 1vw;
     padding-right: 1vw;
     animation: fadein_one 6s;
+}
+
+#title{
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+}
+
+#copyright{
+    position: fixed; 
+    bottom: 5px;
 }
 /*Animation content*/
 
@@ -52,12 +84,28 @@ h1:after {
     content: '';
     width: 20px;
     height: 2px;
-    background: #9C9583;
+    background: rgb(236, 214, 203);
     opacity: 0;
     display: inline-block;
     animation: blink 1.5s linear infinite alternate;
     animation-delay: 4s;
-    }
+}
+.explanation {
+    visibility: hidden;
+    width: 120px;
+    background-color: #BAB2B5;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: fixed;
+    z-index: 1;
+  }
+h1:hover .explanation {
+    visibility: visible;
+  }
       
     @keyframes blink {
     50% {
@@ -66,4 +114,20 @@ h1:after {
     100% {
         opacity: 1;
     }
-    }
+}
+
+@media screen and (max-width: 950px){
+    #info-box{width: 80%;}
+    #info-box-container{flex-direction: column;}
+    #copyright{top: 5px; right: 5px; position: relative;}
+    #bottom{padding-top: 10px; position: relative; width: 220px;}
+}
+
+@media screen and (max-width: 480px){
+    h1{display: none;}
+}
+
+@media screen and (max-height: 500px){
+    #bottom{padding-top: 10px; position: relative; width: 220px;}
+    #copyright{position: relative;}
+}
