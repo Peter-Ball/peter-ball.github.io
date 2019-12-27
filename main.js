@@ -14,18 +14,10 @@ function update(word, adj) {
     title.classList.add('fade');
     var idx = Math.floor(Math.random() * (adj.length));
     var newWord = adj[idx];
-    var curr = 0;
-    while(curr < newWord.length){
-        var post = "";
-        if(newWord.charAt(curr) != word.charAt(curr)){
-            post 
-        }
-        setTimeout(function() {
-            title.innerHTML = newWord;
-            title.classList.remove('fade');
-            title.classList.add('reveal');
-        });
-        curr = curr + 1;
-    }
+    title.style.opacity = 0;
+    setTimeout(function() {
+        title.innerHTML = newWord;
+        title.style.opacity = 1;
+    }, 500);
     return newWord;
 }
