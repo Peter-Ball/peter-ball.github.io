@@ -25,6 +25,7 @@ function update(word, adj) {
             title.classList.remove('fade');
             title.classList.add('reveal');
         });
+        curr = curr + 1;
     }
     return newWord;
 }
