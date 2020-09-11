@@ -31,10 +31,27 @@ h3{
     color: #123C69;
     font-size: 20px;
 }
+
+li{
+    color: #123C69;
+    margin: 5px;
+}
+ul{
+    margin: 0px;
+}
+
 img{
     border-radius: 20px;
     max-width: 100%;
     height: auto;
+}
+
+html{
+    height: 100%;
+}
+
+p{
+    color: #808080;
 }
 
 #info-box-container{
@@ -72,6 +89,10 @@ img{
     position: fixed; 
     bottom: 5px;
 }
+
+#notable{
+    margin-bottom: 0.1em;
+}
 /*Animation content*/
 
 @keyframes fadein_one {
@@ -103,6 +124,28 @@ h1:after {
     position: fixed;
     z-index: 1;
   }
+
+.lead_graphic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.content {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+}
+
+.article_title {
+    text-align: center;
+}
+
+.article_body {
+    text-align: justify;
+}
+
 h1:hover .explanation {
     visibility: visible;
   }
