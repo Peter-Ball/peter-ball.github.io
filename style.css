@@ -98,8 +98,9 @@ p{
 
 h1:after {
     content: '';
-    width: 20px;
-    height: 2px;
+    width: 4px;
+    height: 70px;
+    margin-bottom:  -10px;
     background: rgb(236, 214, 203);
     opacity: 0;
     display: inline-block;
