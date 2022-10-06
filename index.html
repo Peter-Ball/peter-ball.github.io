@@ -12,8 +12,19 @@
         <div id="copyright">
             Peter Ball &copy; 2020
         </div>
-        <h1 id="title"></h1>
-        <p class="explanation">This is an experiment I made that traverses a graph of words connected by small Levenshtein distances (less than 3). While I am relying on a small dataset (10,000 words), surprisingly over 6000 are interconnected. For more info, click "how i made this" at the bottom of the page.</p>
+        <div class="popup_button" onclick="show_popup()">
+            <h1 id="title"></h1>
+        </div>
+        <div class="popup_box" id="levenshtein_box">
+            <div class="popup_content">
+                <span class="close_button" onclick="hide_popup()">&times;</span>
+                <p>This mutating welcome sign visualizes a word graph connected by close Levenshtein distances.</p>
+                <p>The <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> is a measure of difference between two strings. It records the number of single-character edits (insertions, deletions, and substitutions) needed to transform one string into another.</p>
+                <p>Using the starting point Welcome, I recursively grew a graph of words connected by two Levenshtein or less. Each time the page is loaded, the Welcome message is mutated by computing an online random walk through the graph.</p>
+                <p>It's cool to see how close words with very different meanings can be. If you're fast enough, you can get some good tips for your next game of Scrabble.</p>
+                <p>You can read more on the <a href="https://github.com/Peter-Ball/personal-website">github page</a> for this site.</p>
+            </div>
+        </div>  
         <div id="info-box-container">
             <div id="info-box">
                 <h2>Peter Ball</h2>

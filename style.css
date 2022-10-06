@@ -96,20 +96,52 @@ p{
     100% { opacity: 1; }
 }
 
+@keyframes fadein_two {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
-.explanation {
-    visibility: hidden;
-    width: 120px;
-    background-color: #BAB2B5;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: fixed;
-    z-index: 1;
-  }
+.popup_button {
+    cursor: pointer;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.popup_box {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    animation: fadein_two 0.5s;
+}
+
+.popup_content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.close_button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_button:hover,
+.close_button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 .lead_graphic {
     display: block;
@@ -130,19 +162,6 @@ p{
 
 .article_body {
     text-align: justify;
-}
-
-h1:hover .explanation {
-    visibility: visible;
-  }
-      
-    @keyframes blink {
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 @media screen and (max-width: 950px){
