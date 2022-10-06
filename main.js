@@ -7,7 +7,7 @@ function typeWriter() {
         document.getElementById("title").innerHTML += txt.charAt(i);
         i++;
         setTimeout(typeWriter, type_speed);
-    }
+    };
 };
 var interval = 2000;
 var word_net = {};
@@ -17,6 +17,14 @@ $.getJSON("word_net2.json", function(json) {
         txt = update(txt, json[txt].slice(0));
         setInterval(function() {txt = update(txt, json[txt].slice(0))}, 200);}, 8000); 
 });
+
+show_popup = function() {
+    document.getElementById("levenshtein_box").style.display = "block";
+};
+
+hide_popup = function() {
+    document.getElementById("levenshtein_box").style.display = "none";
+};
 
 
 
