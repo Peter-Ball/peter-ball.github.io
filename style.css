@@ -96,17 +96,7 @@ p{
     100% { opacity: 1; }
 }
 
-h1:after {
-    content: '';
-    width: 4px;
-    height: 70px;
-    margin-bottom:  -10px;
-    background: rgb(236, 214, 203);
-    opacity: 0;
-    display: inline-block;
-    animation: blink 1.5s linear infinite alternate;
-    animation-delay: 4s;
-}
+
 .explanation {
     visibility: hidden;
     width: 120px;
