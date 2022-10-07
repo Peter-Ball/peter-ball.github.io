@@ -1,5 +1,5 @@
 //Play typing animation
-var txt = "Welcome";
+var txt = "welcome";
 var i = 0;
 var type_speed =200;
 function typeWriter() {
@@ -11,7 +11,8 @@ function typeWriter() {
 };
 var interval = 2000;
 var word_net = {};
-$.getJSON("word_net2.json", function(json) {
+
+$.getJSON("word_net.json", function(json) {
     console.log(json); // show the JSON file content into console
     setTimeout(function() {
         txt = update(txt, json[txt].slice(0));

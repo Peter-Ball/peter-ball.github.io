@@ -54,79 +54,75 @@ def Needleman_Wunch(w1, w2):
 
 
 #MAIN
-'''words = load_words('words_alpha.txt')
-words.remove('welcome')
+def main():
+    words = load_words('words_alpha.txt')
 
-obscenities = load_words('obscene.txt')
+    obscenities = load_words('bad-words.txt')
 
-for obscenity in obscenities:
-    try:
-        words.remove(obscenity)
-    except ValueError:
-        continue
-
-words = [word for word in words if len(word) <= 8 and len(word) >= 5]
-
-print(len(words))
-
-
-#words = random.sample(words, 10000)
-word_net = {}
-
-counter = 1
-for word in words:
-    print(str(counter), end='\r')
-    if(word == 'welcome'):
-        continue
-
-    dist = Needleman_Wunch('Welcome', word)
-    if(dist < 3):
-        word_net[word] = ['Welcome']
-        word_net['Welcome'] = [word]
-
-    counter += 1
-
-
-words = random.sample(words, 10000)
-
-in_net = list(word_net.keys())
-
-net_size = len(in_net)
-i = 0
-while i < net_size:
-    key = in_net[i]
-
-    for word in words:
-        if(word == key):
+    for obscenity in obscenities:
+        try:
+            words.remove(obscenity)
+        except ValueError:
             continue
 
-        dist = Needleman_Wunch(key, word)
+    words = [word for word in words if len(word) <= 8 and len(word) >= 5]
+
+    print(len(words))
+
+
+    #words = random.sample(words, 10000)
+    word_net = {}
+    word_net['welcome'] = []
+
+    counter = 1
+    for word in words:
+        print(str(counter), end='\r')
+        if(word == 'welcome'):
+            continue
+
+        dist = Needleman_Wunch('welcome', word)
         if(dist < 3):
-            word_net[key].append(word)
+            word_net[word] = ['welcome']
+            word_net['welcome'].append(word)
 
-            try:
-                word_net[word].append(key)
-            except KeyError:
-                word_net[word] = [key]
-                in_net.append(word)
-                net_size += 1
+        counter += 1
 
-    i += 1
+    words = random.sample(words, 10000)
 
-    print(str((i, net_size)), end='\r')
+    in_net = list(word_net.keys())
+
+    net_size = len(in_net)
+    i = 0
+    while i < net_size:
+        key = in_net[i]
+
+        for word in words:
+            if(word == key):
+                continue
+
+            dist = Needleman_Wunch(key, word)
+            if(dist < 3):
+                word_net[key].append(word)
+
+                try:
+                    word_net[word].append(key)
+                except KeyError:
+                    word_net[word] = [key]
+                    in_net.append(word)
+                    net_size += 1
+
+        i += 1
+
+        print(str((i, net_size)), end='\r')
 
 
-print(word_net)
-
-with open('word_net.json', 'w') as json_file:
-    json.dump(word_net, json_file)'''
-
-
-with open('word_net.json', 'r') as fp:
-    word_net = json.load(fp)
+    print(word_net)
 
     for word in word_net.keys():
         word_net[word] = list(set(word_net[word]))
 
-    with open('word_net2.json', 'w') as fp2:
+    with open('word_net.json', 'w') as fp2:
         json.dump(word_net, fp2)
+
+if __name__ == "__main__":
+    main()
