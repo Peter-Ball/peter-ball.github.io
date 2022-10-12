@@ -16,7 +16,7 @@ $.getJSON("word_net.json", function(json) {
     console.log(json); // show the JSON file content into console
     setTimeout(function() {
         txt = update(txt, json[txt].slice(0));
-        setInterval(function() {txt = update(txt, json[txt].slice(0))}, 200);}, 8000); 
+        setInterval(function() {txt = update(txt, json[txt].slice(0))}, 300);}, 8000); 
 });
 
 show_popup = function() {
