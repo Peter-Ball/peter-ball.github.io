@@ -16,7 +16,7 @@
             <h1 id="title"></h1>
         </div>
         <div class="popup_box" id="levenshtein_box">
-            <div class="popup_content">
+            <div class="popup_content" id="popup_content">
                 <span class="close_button" onclick="hide_popup()">&times;</span>
                 <p>This mutating welcome sign visualizes a word graph connected by close Levenshtein distances.</p>
                 <p>The <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a> is a measure of difference between two strings. It records the number of single-character edits (insertions, deletions, and substitutions) needed to transform one string into another.</p>
@@ -25,8 +25,8 @@
                 <p>You can read more on the <a href="https://github.com/Peter-Ball/personal-website">github page</a> for this site.</p>
             </div>
         </div>  
-        <div id="info-box-container">
-            <div id="info-box">
+        <div class="info-box-container">
+            <div class="info-box">
                 <h2>Peter Ball</h2>
                 <h3>McGill 2021: BA; double major in computer science and english</h3> 
                 <h3>Motivated by innovative and interdisciplinary data science</h3>
@@ -41,7 +41,7 @@
                 <h3>Here is my <a href="https://github.com/Peter-Ball">github</a> and <a href="files/Resume.pdf">resume</a> (pdf); also, you can <a href="mailto:peterball12@gmail.com">email</a> me</h3>
             </div>
             <div>
-                <img id="info-box", src="images/Headshot.jpg" style="width: 300px; height: 300px;">
+                <img class="info-box", id="headshot", src="images/Headshot.jpg">
             </div>
         </div>
 
