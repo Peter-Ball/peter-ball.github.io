@@ -9,15 +9,30 @@ function typeWriter() {
         setTimeout(typeWriter, type_speed);
     };
 };
-var interval = 2000;
-var word_net = {};
+/*fetch("word_net.json")
+.then(response => 
+   word_net = response.json()
+)
+console.log(word_net);*/
 
 $.getJSON("word_net.json", function(json) {
     console.log(json); // show the JSON file content into console
+    var repeater;
+    setTimeout(function() {
+        document.getElementById("title").onmouseover=function(){repeater=setInterval(explore_levenshtein(), 300)};
+        document.getElementById("title").onmouseout=function(){clearInterval(repeater)};
+        function explore_levenshtein() {
+            txt = update(txt, json[txt].slice(0));
+        }
+    }, 5000)
+});
+
+
+/*$.getJSON("word_net.json", function(json) {
     setTimeout(function() {
         txt = update(txt, json[txt].slice(0));
         setInterval(function() {txt = update(txt, json[txt].slice(0))}, 300);}, 8000); 
-});
+});*/
 
 show_popup = function() {
     document.getElementById("levenshtein_box").style.display = "block";
@@ -26,6 +41,11 @@ show_popup = function() {
 hide_popup = function() {
     document.getElementById("levenshtein_box").style.display = "none";
 };
+
+reset_welcome = function () {
+    txt = "welcome";
+    title.innerHTML = txt;
+}
 
 
 
