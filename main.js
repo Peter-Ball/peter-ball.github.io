@@ -15,7 +15,7 @@ function typeWriter() {
 )
 console.log(word_net);*/
 
-$.getJSON("word_net.json", function(json) {
+$.getJSON("word_net2.json", function(json) {
     console.log(json); // show the JSON file content into console
     var repeater;
     setTimeout(function() {

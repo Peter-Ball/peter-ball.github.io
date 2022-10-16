@@ -55,20 +55,7 @@ def Needleman_Wunch(w1, w2):
 
 #MAIN
 def main():
-    words = load_words('words_alpha.txt')
-
-    obscenities = load_words('bad-words.txt')
-
-    for obscenity in obscenities:
-        try:
-            words.remove(obscenity)
-        except ValueError:
-            continue
-
-    words = [word for word in words if len(word) <= 8 and len(word) >= 5]
-
-    print(len(words))
-
+    words = load_words('wordlist.txt')
 
     #words = random.sample(words, 10000)
     word_net = {}
@@ -87,7 +74,7 @@ def main():
 
         counter += 1
 
-    words = random.sample(words, 10000)
+    #words = random.sample(words, 10000)
 
     in_net = list(word_net.keys())
 
@@ -121,7 +108,7 @@ def main():
     for word in word_net.keys():
         word_net[word] = list(set(word_net[word]))
 
-    with open('word_net.json', 'w') as fp2:
+    with open('word_net2.json', 'w') as fp2:
         json.dump(word_net, fp2)
 
 if __name__ == "__main__":
