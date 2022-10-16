@@ -1,5 +1,5 @@
 h1{
-    color: #F9B931;
+    color: #3466AA;
     font-size: 70px;
     margin: auto;
     margin-block-end: 0.67em;
@@ -8,16 +8,16 @@ h1{
 }
 
 a:link{
-    color: #F0810E;
+    color: #82B7DC;
     text-decoration: underline;
 }
 a:visited{
-    color: #F0810E;
+    color: #82B7DC;
     text-decoration: none;
 }
 
 h2{
-    color: #F0810E;
+    color: #3466AA;
     font-size: 40px;
 }
 
@@ -63,7 +63,7 @@ p{
 }
 
 #bottom{
-    animation: fadein_one 6s;
+    animation: fadein_one 4s;
     position: fixed; 
     bottom: 5px; 
     left: 50%; 
@@ -75,7 +75,7 @@ p{
     display: inline-block;
     padding-left: 1vw;
     padding-right: 1vw;
-    animation: fadein_one 6s;
+    animation: fadein_one 4s;
 }
 
 #title{
