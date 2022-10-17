@@ -18,13 +18,13 @@ def main():
     regex = re.compile(r'\.|-| |[A-Z]')
     common = [word for word in common if not regex.search(word)]
 
-    common = [word for word in common if len(word) <= 8 and len(word) >= 5]
+    #common = [word for word in common if len(word) <= 8 and len(word) >= 5]
 
     common = list(set(common) - set(bad_words))
 
     print(len(common))
 
-    with open("wordlist.txt", 'w') as fp:
+    with open("wordlist2.txt", 'w') as fp:
         fp.write('\n'.join(common))
 
 

@@ -55,22 +55,22 @@ def Needleman_Wunch(w1, w2):
 
 #MAIN
 def main():
-    words = load_words('wordlist.txt')
+    words = load_words('wordlist2.txt')
 
     #words = random.sample(words, 10000)
     word_net = {}
-    word_net['welcome'] = []
+    word_net['hello'] = []
 
     counter = 1
     for word in words:
         print(str(counter), end='\r')
-        if(word == 'welcome'):
+        if(word == 'hello'):
             continue
 
-        dist = Needleman_Wunch('welcome', word)
-        if(dist < 3):
-            word_net[word] = ['welcome']
-            word_net['welcome'].append(word)
+        dist = Needleman_Wunch('hello', word)
+        if(dist == 1):
+            word_net[word] = ['hello']
+            word_net['hello'].append(word)
 
         counter += 1
 
@@ -88,7 +88,7 @@ def main():
                 continue
 
             dist = Needleman_Wunch(key, word)
-            if(dist < 3):
+            if(dist == 1):
                 word_net[key].append(word)
 
                 try:
@@ -108,7 +108,7 @@ def main():
     for word in word_net.keys():
         word_net[word] = list(set(word_net[word]))
 
-    with open('word_net2.json', 'w') as fp2:
+    with open('word_net.json', 'w') as fp2:
         json.dump(word_net, fp2)
 
 if __name__ == "__main__":
