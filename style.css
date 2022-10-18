@@ -176,7 +176,7 @@ p{
     text-align: justify;
 }
 
-@media screen and (max-width: 950px){
+@media screen and (max-width: 59.375em){
     .info-box{width: 80%;}
     .info-box-container{flex-direction: column;}
     #copyright{top: 5px; right: 5px; position: relative;}
@@ -185,13 +185,18 @@ p{
     h3{font-size: 20px;}
     li{font-size: 20px;}
     #headshot{width: 300px; height: 300px;}
+    #bottom{padding-top: 10px; position: relative; width: 220px;}
+}
+
+@media screen and (max-width: 1495px){
+    #bottom{padding-top: 10px; position: relative; width: 220px;}
 }
 
 @media screen and (max-width: 480px){
     h1{display: none;}
 }
 
-@media screen and (max-height: 950px){
+@media screen and (max-height: 500px){
     #bottom{padding-top: 10px; position: relative; width: 220px;}
     #copyright{position: relative;}
 }
